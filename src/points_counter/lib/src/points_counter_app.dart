@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:points_counter/src/container/providers_container.dart';
-import 'package:points_counter/src/pages/home_page.dart';
 import 'package:provider/provider.dart';
+import 'package:points_counter/src/infrastructure/providers_container.dart';
+import 'package:points_counter/src/pages/home_page.dart';
 
 class PointsCounterApp extends StatelessWidget {
   @override

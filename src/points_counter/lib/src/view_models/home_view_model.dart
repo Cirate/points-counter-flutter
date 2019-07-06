@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:points_counter/src/libraries/services.dart';
+import 'package:points_counter/src/libraries/models.dart';
 
 class HomeViewModel with ChangeNotifier {
+  HomeViewModel(this._gamesService) {
+    _gamesService.games.listen(onGameAdded);
+  }
 
-  int _counter = 0;
+  IGamesService _gamesService;
   String _title = "Points Counter App";
 
   String get title => _title;
-  String get buttonText => "Change Title";
 
-  void changeTitle() {
-    _title = "Changed $_counter";
-    _counter++;
+  void onGameAdded(Game game) {
+    _title = game.name;
     notifyListeners();
   }
 }
