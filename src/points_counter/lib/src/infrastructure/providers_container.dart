@@ -9,7 +9,6 @@ class ProvidersContainer {
       notifierFor<NewGameViewModel>(),
     ];
 
-  static ChangeNotifierProvider<T> notifierFor<T extends ChangeNotifier>() {
-    return ChangeNotifierProvider<T>(builder: (_) => ServiceLocator.resolve<T>());
-  }
+  static ChangeNotifierProvider<T> notifierFor<T extends ChangeNotifier>() 
+    => ChangeNotifierProvider<T>(builder: (_) => ServiceLocator.resolve<T>());
 }

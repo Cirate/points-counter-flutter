@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:points_counter/src/libraries/view_models.dart';
+import 'package:points_counter/src/infrastructure/consumer_with_navigator.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
                 Consumer<HomeViewModel>(builder: (context, vm, _) {
                   return Text(vm.title);
                 }),
-                Consumer<NewGameViewModel>(
+                ConsumerWithNavigator<NewGameViewModel>(
                   builder: (context, newGameVM, _) {
                     return RaisedButton(
                       onPressed: newGameVM.createGame,

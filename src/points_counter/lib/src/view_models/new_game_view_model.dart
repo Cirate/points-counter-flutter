@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:points_counter/src/libraries/services.dart';
 import 'package:points_counter/src/libraries/models.dart';
+import 'package:points_counter/src/libraries/view_models.dart';
 
-class NewGameViewModel with ChangeNotifier {
+class NewGameViewModel with ChangeNotifier, NavigatorInjector {
+  
   NewGameViewModel(this._gamesService);
 
   IGamesService _gamesService;
