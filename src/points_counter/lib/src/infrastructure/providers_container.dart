@@ -7,6 +7,7 @@ class ProvidersContainer {
   static List<SingleChildCloneableWidget> get providers => [
       notifierFor<HomeViewModel>(),
       notifierFor<NewGameViewModel>(),
+      notifierFor<RequestNewGameViewModel>()
     ];
 
   static ChangeNotifierProvider<T> notifierFor<T extends ChangeNotifier>() 
