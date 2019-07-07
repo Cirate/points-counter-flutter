@@ -1,1 +1,3 @@
-points-counter-flutter
+# Points Counter
+
+Project to learn Flutter and Dart.
