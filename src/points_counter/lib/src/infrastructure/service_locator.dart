@@ -17,6 +17,7 @@ class ServiceLocator {
   static void _registerViewModels() {
     _registerLazySingleton(() => HomeViewModel(resolve<IGamesService>()));
     _registerLazySingleton(() => NewGameViewModel(resolve<IGamesService>()));
+    _registerLazySingleton(() => RequestNewGameViewModel());
   }
 
   static T resolve<T>() => _getIt.get<T>();
