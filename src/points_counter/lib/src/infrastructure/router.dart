@@ -3,8 +3,8 @@ import 'package:points_counter/src/libraries/pages.dart';
 
 class Router {
   static Map<String, WidgetBuilder> _routes = {
-    '/': (_) => HomePage(),
-    '/new-game': (_) => NewGamePage()
+    HomePage.route: (_) => HomePage(),
+    NewGamePage.route: (_) => NewGamePage()
   };
 
   static Route<dynamic> generateRoute(RouteSettings route) =>

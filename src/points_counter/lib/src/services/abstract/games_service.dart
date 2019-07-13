@@ -2,7 +2,8 @@ import 'package:rxdart/rxdart.dart';
 import 'package:points_counter/src/models/game.dart';
 
 abstract class IGamesService {
-  PublishSubject<Game> get games;
   void addGame(Game game);
+  List<Game> getGames();
+  void listenToGameAdded(void onGameAdded(Game addedGame));
   void dispose();
 }

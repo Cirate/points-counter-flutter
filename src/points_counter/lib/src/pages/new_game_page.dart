@@ -3,6 +3,8 @@ import 'package:points_counter/src/libraries/view_models.dart';
 import 'package:points_counter/src/infrastructure/consumer_with_navigator.dart';
 
 class NewGamePage extends StatelessWidget {
+  static const String route = '/new-game';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
