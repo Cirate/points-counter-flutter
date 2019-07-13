@@ -7,30 +7,26 @@ class NewGamePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          child: Center(
-            child: Column(
-              children: <Widget>[
-                ConsumerWithNavigator<NewGameViewModel>(
-                  builder: (context, vm, _) {
-                    return Column(
-                      children: <Widget>[
-                        Text(vm.titleText),
-                        RaisedButton(
-                          onPressed: vm.createGame,
-                          child: Text(vm.buttonText),
-                        ),
-                      ],
-                    );
-                  },
-                ),
-              ],
+    return ConsumerWithNavigator<NewGameViewModel>(builder: (context, vm, _) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(vm.titleText),
+        ),
+        body: SafeArea(
+          child: Container(
+            child: Center(
+              child: Column(
+                children: <Widget>[
+                  RaisedButton(
+                    onPressed: vm.createGame,
+                    child: Text(vm.buttonText),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

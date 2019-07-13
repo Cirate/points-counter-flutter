@@ -18,22 +18,28 @@ class HomePage extends StatelessWidget {
           );
         },
       ),
-      body: SafeArea(
-        bottom: false,
-        child: Container(
-          child: Center(
-            child: Consumer<HomeViewModel>(builder: (context, vm, _) {
-              return Container(
-                child: ListView.builder(
-                  itemCount: vm.games.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return GameListItem(vm.games[index]);
-                  },
+      body: Consumer<HomeViewModel>(
+        builder: (context, vm, _) {
+          return CustomScrollView(
+            slivers: <Widget>[
+              SliverAppBar(
+                floating: true,
+                title: Text(vm.title),
+              ),
+              SliverSafeArea(
+                top: false,
+                sliver: SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (_, index) {
+                      return GameListItem(vm.games[index]);
+                    },
+                    childCount: vm.games.length,
+                  ),
                 ),
-              );
-            }),
-          ),
-        ),
+              )
+            ],
+          );
+        },
       ),
     );
   }
