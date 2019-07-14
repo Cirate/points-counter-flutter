@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:points_counter/src/libraries/view_models.dart';
+import 'package:points_counter/src/libraries/widgets.dart';
 import 'package:points_counter/src/infrastructure/consumer_with_navigator.dart';
 
 class NewGamePage extends StatelessWidget {
@@ -17,6 +18,7 @@ class NewGamePage extends StatelessWidget {
             child: Center(
               child: Column(
                 children: <Widget>[
+                  TextFormFieldFromPO(vm.gameNameFormField),
                   RaisedButton(
                     onPressed: vm.createGame,
                     child: Text(vm.buttonText),
