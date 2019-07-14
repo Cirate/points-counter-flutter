@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:points_counter/src/libraries/services.dart';
-import 'package:points_counter/src/libraries/models.dart';
 import 'package:points_counter/src/libraries/view_models.dart';
 import 'package:points_counter/src/infrastructure/mock_data_generator.dart';
 import 'package:points_counter/src/libraries/presentation_objects.dart';
 
-class NewGameViewModel with ChangeNotifier, NavigatorInjector {
+class NewGameViewModel extends BaseVM {
   NewGameViewModel(this._gamesService);
 
   IGamesService _gamesService;
@@ -20,5 +18,11 @@ class NewGameViewModel with ChangeNotifier, NavigatorInjector {
   void createGame() {
     _gamesService.addGame(MockDataGenerator.generateGame());
     navigator.pop();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    gameNameFormField.resetState();
   }
 }

@@ -9,22 +9,18 @@ class GameListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     var formatter = new DateFormat('yMMMMEEEEd');
     String formatted = formatter.format(_game.lastUpdateDate);
 
     return Card(
-          child: Padding(
+      child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: <Widget>[
             Center(
               child: Text(
                 _game.name,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold
-                ),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
@@ -41,7 +37,7 @@ class GameListItem extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: <Widget>[
-                  Text('Last played: ${formatted}'),
+                  Text('Last played: $formatted'),
                 ],
               ),
             ),
